@@ -1,4 +1,9 @@
-import { capitalize, reverseString, calculator } from './test-methods';
+import {
+  capitalize,
+  reverseString,
+  calculator,
+  caesarCipher,
+} from './test-methods';
 
 test('capitalize first char', () => {
   expect(capitalize('jimmy')).toMatch('Jimmy');
@@ -30,4 +35,10 @@ test('divide', () => {
 test('multiply', () => {
   expect(calculator.multiply(2, 3)).toBe(6);
   expect(calculator.multiply(10, 3)).toBe(30);
+});
+
+test('caesar cipher', () => {
+  expect(caesarCipher('xyz', 3)).toMatch('abc');
+  expect(caesarCipher('HeLLo', 3)).toMatch('KhOOr');
+  expect(caesarCipher('Hello, World!', 3)).toMatch('Khoor, Zruog!');
 });
