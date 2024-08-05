@@ -49,4 +49,24 @@ const caesarCipher = (string, shift) => {
     .join('');
 };
 
-export { capitalize, reverseString, calculator, caesarCipher };
+const analyzeArray = (arr) => {
+  const length = arr.length;
+  const average = arr.reduce((total, curr) => total + curr, 0) / length;
+
+  let min = arr[0];
+  let max = arr[0];
+
+  arr.forEach((val) => {
+    if (val < min) min = val;
+    if (val > max) max = val;
+  });
+
+  return {
+    average,
+    min,
+    max,
+    length,
+  };
+};
+
+export { capitalize, reverseString, calculator, caesarCipher, analyzeArray };

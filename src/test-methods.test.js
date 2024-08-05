@@ -3,6 +3,7 @@ import {
   reverseString,
   calculator,
   caesarCipher,
+  analyzeArray,
 } from './test-methods';
 
 test('capitalize first char', () => {
@@ -41,4 +42,19 @@ test('caesar cipher', () => {
   expect(caesarCipher('xyz', 3)).toMatch('abc');
   expect(caesarCipher('HeLLo', 3)).toMatch('KhOOr');
   expect(caesarCipher('Hello, World!', 3)).toMatch('Khoor, Zruog!');
+});
+
+test('analyze array', () => {
+  expect(analyzeArray([1, 8, 3, 4, 2, 6])).toEqual({
+    average: 4,
+    min: 1,
+    max: 8,
+    length: 6,
+  });
+  expect(analyzeArray([7, 12, 13, 4, 5, 6, 20, 33])).toEqual({
+    average: 12.5,
+    min: 4,
+    max: 33,
+    length: 8,
+  });
 });
